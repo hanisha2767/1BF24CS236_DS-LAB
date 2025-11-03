@@ -85,7 +85,7 @@ void infixToPostfix(char infix[],char postfix[])
         }
         else
         {
-            while(top!=-1 && ((precedence(peek()) > precedence(c)||(precedence(peek())==precedence(c)&& associativity(c)==0))))
+            while(top!=-1 && (precedence(peek()) > precedence(c)||(precedence(peek())==precedence(c)&& associativity(c)==0)))
                                 postfix[j++]=pop();
             push(c); // others
         }
@@ -103,3 +103,4 @@ int main()
     printf("postfix expression:%s\n",postfix);
     return 0;
 }
+
