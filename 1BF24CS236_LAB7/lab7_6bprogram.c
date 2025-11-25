@@ -84,58 +84,56 @@ void displayQueue()
         temp=temp->next;
     }
 }
-void main()
-{
-    int choice,val,ch;
-    printf("1.stack operations,2.queue operations\n");
-    do{
-        printf("enter operation choice:\n");
-        scanf("%d",&choice);
-        switch(choice)
-        {
-          case 1:
-              {
-                  printf("1.push,2.pop,3.display\n");
-                  do{
-                    printf("enter choice:\n");
-                    scanf("%d",ch);
-                    switch(ch)
-                    {
-                        case 1:{printf("enter value to push:\n");
-                           scanf("%d",&val);
-                           push(val);
-                           break;}
-                        case 2:{pop();
-                           break;}
-                        case 3:{displayStack();
-                           break;}
-                        default:printf("invalid choice\n");
-                    }
-                  }while(ch!=0);
-                  break;}
-                        case 2:
-                            {
-                                 printf("1.enqueue,2.dequeue,3.display\n");
-                  do{
-                    printf("enter choice:\n");
-                    scanf("%d",ch);
-                    switch(ch)
-                    {
-                        case 1:{printf("enter value to enqueue:\n");
-                           scanf("%d",&val);
-                           enqueue(val);
-                           break;}
-                        case 2:{dequeue();
-                           break;}
-                        case 3:{displayQueue();
-                           break;}
-                        default:printf("invalid choice\n");
-                    }
-                  }while(ch!=0);
-                  break;
-                            }
-                        default:printf("invalid choice\n");
+int main() {
+    int choice, value;
+
+    while (1) {
+        printf("\n===== MENU =====\n");
+        printf("1. Stack PUSH\n");
+        printf("2. Stack POP\n");
+        printf("3. Display Stack\n");
+        printf("4. Queue ENQUEUE\n");
+        printf("5. Queue DEQUEUE\n");
+        printf("6. Display Queue\n");
+        printf("7. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                printf("Enter value to PUSH: ");
+                scanf("%d", &value);
+                push(value);
+                break;
+
+            case 2:
+                pop();
+                break;
+
+            case 3:
+                displayStack();
+                break;
+
+            case 4:
+                printf("Enter value to ENQUEUE: ");
+                scanf("%d", &value);
+                enqueue(value);
+                break;
+
+            case 5:
+                dequeue();
+                break;
+
+            case 6:
+                displayQueue();
+                break;
+
+            case 7:
+                exit(0);
+
+            default:
+                printf("\nInvalid choice! Try again.\n");
         }
-    }while(choice!=0);
+    }
     return 0;
 }
