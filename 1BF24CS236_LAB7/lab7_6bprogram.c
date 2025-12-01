@@ -86,9 +86,7 @@ void displayQueue()
 }
 int main() {
     int choice, value;
-
-    while (1) {
-        printf("\n===== MENU =====\n");
+    printf("\n===== MENU =====\n");
         printf("1. Stack PUSH\n");
         printf("2. Stack POP\n");
         printf("3. Display Stack\n");
@@ -96,6 +94,7 @@ int main() {
         printf("5. Queue DEQUEUE\n");
         printf("6. Display Queue\n");
         printf("7. Exit\n");
+    while (1) {
         printf("Enter your choice: ");
         scanf("%d", &choice);
 
